@@ -1,0 +1,163 @@
+/* DIRECTORY */
+.dir-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 48px 60px 20px;
+}
+
+.dir-head {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 36px;
+  text-align: center;
+  justify-content: center;
+}
+
+.dir-badge {
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.dir-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+
+.dir-sub {
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  text-transform: none;
+  color: var(--gold-muted);
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+
+/* GRID */
+.dir-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 0 0 60px;
+}
+
+.dir-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--warm-gray);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+/* CARD */
+.alum-card {
+  background: var(--black);
+  border: 1px solid rgba(201,168,76,0.18);
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+.alum-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201,168,76,0.6);
+}
+
+.card-photo {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.year-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(201,168,76,0.4);
+  color: var(--gold);
+  font-size: 10px;
+  padding: 4px 8px;
+}
+
+.card-body {
+  padding: 14px;
+}
+
+.alum-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.alum-role {
+  font-size: 11px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.alum-company {
+  font-size: 12px;
+  color: var(--warm-gray);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .dir-grid { grid-template-columns: repeat(3, 1fr); }
+  .dir-wrap { padding: 44px 40px 20px; }
+}
+
+@media (max-width: 900px) {
+  .dir-grid { grid-template-columns: repeat(2, 1fr); }
+  .dir-wrap { padding: 36px 28px 16px; }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0 20px;
+  }
+  .nav-links {
+    gap: 6px;
+  }
+  .nav-brand {
+    gap: 8px;
+  }
+  .nav-links a {
+    padding: 6px 10px;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .dir-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .dir-wrap {
+    padding: 28px 18px 12px;
+  }
+  .card-photo {
+    height: 220px;
+  }
+}

@@ -1,0 +1,332 @@
+/* --------------------------------------------------------------------------------------------------------------------- */
+/*--- About Page (v3 — Advanced: balanced split-hero + equal-height feature grid ------------------------------------- */
+
+.page {
+  padding: clamp(110px, 15vw, 150px) clamp(20px, 6vw, 100px) 0;
+}
+
+#about {
+  background:
+    radial-gradient(circle at 85% 5%, rgba(201, 168, 76, 0.06), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(201, 168, 76, 0.04), transparent 40%),
+    linear-gradient(180deg, #0D0D0D 0%, #0F0C06 100%);
+}
+
+/* ── Fade-in on load ── */
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Split Hero: text (55%) + fixed-ratio image panel (45%), balanced ── */
+.about-hero {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 70px;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+.about-hero-text {
+  text-align: left;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.gold-line {
+  width: 50px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.6;
+  margin: 24px 0;
+}
+
+.about-hero-text .section-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--gold-muted);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.btn-outline-about {
+  display: inline-block;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-about:hover {
+  background: rgba(201, 168, 76, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ── Balanced image panel: fixed aspect-ratio so it never stretches oddly ── */
+.about-hero-image {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+}
+
+.about-hero-image::before,
+.about-hero-image::after {
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--gold);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.about-hero-image::before {
+  top: -10px;
+  left: -10px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.about-hero-image::after {
+  bottom: -10px;
+  right: -10px;
+  border-left: none;
+  border-top: none;
+}
+
+/* ── Feature Grid: equal-height cards for a balanced, ordered look ── */
+.section-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.feature-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 28px;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 26px;
+  background: rgba(201, 168, 76, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.14);
+  border-radius: 4px;
+  transition: all 0.35s ease;
+}
+
+.feature-card:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+  transform: translateY(-6px);
+  background: rgba(201, 168, 76, 0.05);
+}
+
+.feature-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: rgba(201, 168, 76, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.feature-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.feature-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--gold-muted);
+  line-height: 1.55;
+}
+
+/* ── Closing CTA band ── */
+.about-cta {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 70px 20px 100px;
+}
+
+.about-cta .gold-line {
+  margin: 0 auto 28px;
+}
+
+.about-cta h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  color: white;
+  margin-bottom: 12px;
+}
+
+.about-cta p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: var(--gold-muted);
+  margin-bottom: 32px;
+}
+
+.btn-primary-about {
+  background: var(--gold);
+  color: var(--near-black);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 14px 34px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-about:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+/* RESPONSIVE - About Page */
+
+@media (max-width: 1024px) {
+  .about-hero {
+    gap: 50px;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+    padding-bottom: 70px;
+  }
+
+  .about-hero-text {
+    text-align: center;
+  }
+
+  .about-hero-text .section-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-hero-image {
+    order: -1;
+    max-width: 320px;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .feature-card {
+    padding: 32px 24px;
+  }
+
+  .about-cta {
+    padding: 50px 10px 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding-top: 100px;
+  }
+
+  .section-label {
+    letter-spacing: 0.15em;
+  }
+
+  .about-hero {
+    padding-bottom: 50px;
+  }
+
+  .about-hero-image {
+    max-width: 260px;
+  }
+
+  .about-hero-image::before,
+  .about-hero-image::after {
+    width: 18px;
+    height: 18px;
+  }
+
+  .section-wrap {
+    padding-bottom: 60px;
+  }
+}

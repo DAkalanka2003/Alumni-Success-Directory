@@ -1,0 +1,130 @@
+/* --------------------------------------------------------------------------------------------------------------------- */
+
+
+
+/*--- MAIN----*/
+.main {
+  margin-left: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  position: static;
+  top: 0;
+  z-index: 100;
+  height: 60px;
+  background: rgba(16, 13, 6, 0.97);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.13);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.topbar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: #FAF6EE;
+}
+
+.topbar-title em {
+  font-style: italic;
+  color: #C9A84C;
+}
+
+.content {
+  padding: 28px 30px;
+  flex: 1;
+}
+
+.search-box {
+  background: rgba(201, 168, 76, 0.05);
+  border: 1px solid rgba(201, 168, 76, 0.22);
+  color: #FAF6EE;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  padding: 9px 16px;
+  outline: none;
+  border-radius: 2px;
+  transition: border-color 0.3s;
+  width: 250px;
+}
+
+.search-box::placeholder {
+  color: #6B5E4A;
+}
+
+.search-box:focus {
+  border-color: #C9A84C;
+}
+
+.tbl-info {
+  font-size: 11px;
+  color: #6B5E4A;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  padding: 10px 14px;
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  text-align: left;
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 13px 14px;
+  font-size: 0.82rem;
+  color: #FAF6EE;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.06);
+  vertical-align: middle;
+}
+
+.alum {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #FAF6EE;
+}
+
+/* Button Styles */
+button.btn-approve {
+  background-color: var(--gold);
+  color: var(--black);
+  border: none;
+  padding: 6px 12px;
+  margin-right: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button.btn-approve:hover {
+  background-color: var(--gold-light);
+}
+
+button.btn-reject {
+  background-color: #A03A3A;
+  color: var(--cream);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button.btn-reject:hover {
+  background-color: #C14A4A;
+}

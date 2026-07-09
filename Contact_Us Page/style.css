@@ -1,0 +1,331 @@
+/* --------------------------------------------------------------------------------------------------------------------- */
+/*--- Contact Us Page (v2 — Directory / Certificate design) --------------------------------------------------------- */
+
+.contact-page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 150px 40px 100px;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(201, 168, 76, 0.05), transparent 45%),
+    linear-gradient(180deg, #0D0D0D 0%, #120F08 50%, #0D0D0D 100%);
+}
+
+/* ── Page intro ── */
+.page-intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 70px;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.15;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.gold-line {
+  width: 50px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.6;
+  margin: 24px auto;
+}
+
+.section-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--gold-muted);
+  line-height: 1.6;
+}
+
+/* ── Fade-in on load ── */
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Split layout: directory + contact card ── */
+.directory-split {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* ── Team Directory (credits-list style) ── */
+.team-directory {
+  border-top: 1px solid rgba(201, 168, 76, 0.25);
+}
+
+.team-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 8px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  position: relative;
+  transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.team-row::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gold);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.team-row:hover {
+  background: rgba(201, 168, 76, 0.04);
+  padding-left: 20px;
+}
+
+.team-row:hover::before {
+  transform: scaleY(1);
+}
+
+.team-index {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--gold-dark);
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.team-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.team-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.team-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 600;
+}
+
+.team-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--gold-muted);
+}
+
+/* ── Contact Card (engraved / certificate style) ── */
+.contact-card {
+  position: sticky;
+  top: 100px;
+}
+
+.contact-card-inner {
+  position: relative;
+  background: #17130B;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  padding: 44px 36px;
+  box-shadow: 0 0 40px rgba(183, 164, 113, 0.06);
+  text-align: center;
+}
+
+/* corner brackets — signature engraved detail */
+.contact-card-inner::before,
+.contact-card-inner::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--gold);
+  opacity: 0.7;
+}
+
+.contact-card-inner::before {
+  top: -8px;
+  left: -8px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.contact-card-inner::after {
+  bottom: -8px;
+  right: -8px;
+  border-left: none;
+  border-top: none;
+}
+
+.contact-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.contact-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.contact-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: var(--gold-muted);
+  margin-bottom: 28px;
+}
+
+.contact-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.5;
+  margin: 0 auto 28px;
+}
+
+.contact-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  margin-bottom: 28px;
+}
+
+.contact-row:last-child {
+  margin-bottom: 0;
+}
+
+.contact-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: rgba(201, 168, 76, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.contact-icon img {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+}
+
+.contact-detail h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.contact-detail p {
+  font-size: 0.85rem;
+  color: #b3b3b3;
+  line-height: 1.5;
+}
+
+/* ── RESPONSIVE STYLES ── */
+@media (max-width: 1024px) {
+  .directory-split {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .contact-card {
+    position: static;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 120px 20px 70px;
+  }
+
+  .page-intro {
+    margin-bottom: 50px;
+  }
+
+  .team-row {
+    gap: 16px;
+    padding: 18px 4px;
+  }
+
+  .team-avatar {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page {
+    padding: 105px 16px 60px;
+  }
+
+  .team-index {
+    display: none;
+  }
+
+  .team-row {
+    gap: 14px;
+  }
+
+  .contact-card-inner {
+    padding: 34px 22px;
+  }
+
+  .contact-card-inner::before,
+  .contact-card-inner::after {
+    width: 16px;
+    height: 16px;
+  }
+}
